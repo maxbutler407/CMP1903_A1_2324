@@ -6,18 +6,30 @@ using System.Threading.Tasks;
 
 namespace CMP1903_A1_2324
 {
-    internal class Die
+    public class Die
     {
-        /*
-         * The Die class should contain one property to hold the current die value,
-         * and one method that rolls the die, returns and integer and takes no parameters.
-         */
+        public int RollValue { get; set; } // property
+        public void Roll() // Dice.Roll() method -- use Dice.Roll()
+                 
+        
+        {
+            List<int> RollValue = new List<int>() { 1, 2, 3, 4, 5, 6 }; // list sets the numbers on die
+            Random rnd = new Random();
+            int randIndex = rnd.Next(RollValue.Count);
+            int random = RollValue[randIndex];
 
-        //Property
+            Console.WriteLine(random); // prints the random value from the list
+        }
 
-
-        //Method
-
-
+            // deleted because they made no difference to randomising numbers
+        }
     }
-}
+
+/*
+ * The Die class should contain one property to hold the current die value,
+ * and one method that rolls the die, returns an integer and takes no parameters.
+ */
+
+//Property
+//Method
+

@@ -6,14 +6,23 @@ using System.Threading.Tasks;
 
 namespace CMP1903_A1_2324
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
+            Game game = new Game();
+        }
+
+
+            //Game game = new Game(die, die2, die3); // instantiation - calls the Game constructor
+
+
+
+        
+    }
+}
+
             /*
              * Create a Game object and call its methods.
              * Create a Testing object to verify the output and operation of the other classes.
              */
-        }
-    }
-}

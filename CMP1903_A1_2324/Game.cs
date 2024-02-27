@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace CMP1903_A1_2324
 {
-    internal class Game
+    public class Game
     {
+        Die dice1 = new Die(RollValue); // instantiation creates a dice object (of class Die)
+        Die dice2 = new Die(RollValue);
+        Die dice3 = new Die(RollValue);
         /*
          * The Game class should create three die objects, roll them, sum and report the total of the three dice rolls.
          *
