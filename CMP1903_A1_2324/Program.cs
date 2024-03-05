@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CMP1903_A1_2324;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,19 +11,35 @@ namespace CMP1903_A1_2324
     {
         static void Main(string[] args)
         {
-            Game game = new Game();
+
+            bool Testing = false;
+
+            // Simple if else statement that will either run the game or test the methods depending on the above 'Testing' bool
+            if (!Testing)
+            {
+                RunGame();
+            }
+            else
+            {
+                TestMethods();
+            }
+
+            // Function to create a testing object and run its methods 
+            void TestMethods()
+            {
+                Testing testing = new Testing();
+
+                testing.TestDieClass();
+
+                testing.TestGameClass();
+            }
+
+            // Function to create a game object and execute the main game loop
+            void RunGame()
+            {
+                // Create our game object that will handle the game 
+                Game game = new Game();
+            }
         }
-
-
-            //Game game = new Game(die, die2, die3); // instantiation - calls the Game constructor
-
-
-
-        
     }
 }
-
-            /*
-             * Create a Game object and call its methods.
-             * Create a Testing object to verify the output and operation of the other classes.
-             */

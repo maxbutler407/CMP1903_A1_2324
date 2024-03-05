@@ -1,20 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Globalization;
 
 namespace CMP1903_A1_2324
 {
-    internal class Testing
+    public class Testing
     {
-        /*
-         * This class should test the Game and the Die class.
-         * Create a Game object, call the methods and compare their output to expected output.
-         * Create a Die object and call its method.
-         * Use debug.assert() to make the comparisons and tests.
-         */
+        public void TestDieClass()
+        {
+            // Creates an instance of the Die class
+            Die die = new Die();
 
-        //Method
+            // Tests the Roll() method to check for valid return types
+            Console.WriteLine("Testing Roll method...");
+
+            Debug.Assert(diceroll != random.Next(1, 7), "Value should only be an integer in the range of 1 to 6.");
+        }
+
+        public void TestGameClass()
+        {
+            // Create an instance of the Game class
+            Game game = new Game();
+
+            // Test ExecuteFurtherDiceRolls method to check for valid return types
+            Console.WriteLine("Testing the sum variable...");
+
+            // Assertions ensure sum != 0 or <= 19, as that would mean a dice roll was not an integer not in the range 
+            Debug.Assert(sum <= 2, "The 3 dice rolls cannot sum to be less than 3.");
+            Debug.Assert(sum >= 19, "The 3 dice rolls cannot sum to be 19 and over.");
+        }
     }
 }

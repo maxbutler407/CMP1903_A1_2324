@@ -1,35 +1,60 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CMP1903_A1_2324
-{
+{ 
     public class Die
     {
-        public int RollValue { get; set; } // property
-        public void Roll() // Dice.Roll() method -- use Dice.Roll()
-                 
-        
+        TestDieClass();
+
+        public int dicevalue {  get; set; } // dicevalue property is used to store the roll value
+
+        // this block programs the Roll() method
+        public int Roll()
         {
-            List<int> RollValue = new List<int>() { 1, 2, 3, 4, 5, 6 }; // list sets the numbers on die
-            Random rnd = new Random();
-            int randIndex = rnd.Next(RollValue.Count);
-            int random = RollValue[randIndex];
+            Random random = new Random(); // Creates random object using built-in Random class
 
-            Console.WriteLine(random); // prints the random value from the list
-        }
+            int diceroll = random.Next(1, 7); // Picks a random integer (1-6) from a list using the random object
+    
 
-            // deleted because they made no difference to randomising numbers
+            Console.WriteLine($"\nOne dice rolled a {diceroll}"); // Prints the random value from the list
+
+
+            // Unused method was designed for the additional task, but code is not finished
+            //MoreRolls();
+
+            void MoreRolls()
+            {
+                // additional task: asks user how many rolls they would like and sums them up in the Game class
+                Console.WriteLine("Would you like to roll again?");
+                Console.WriteLine("If so, enter how many times you would like to roll the dice:");
+                int number = int.Parse(Console.ReadLine());
+
+                if (number >= 1)
+                {
+                    
+                    int[] array = new int[number];
+                    for (int i = 0; i <= number - 1; i++)
+                    {
+                         Roll();
+                         Console.WriteLine($"One dice rolled a {diceroll}.");
+                         Console.ReadKey();
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Please input an integer, greater than 0.");
+                    Console.ReadKey();
+                    MoreRolls();
+                }
+                Console.ReadKey();  
+            }
+            dicevalue = diceroll; // Assigns a value to the dicevalue property
+            return dicevalue;
         }
     }
-
-/*
- * The Die class should contain one property to hold the current die value,
- * and one method that rolls the die, returns an integer and takes no parameters.
- */
-
-//Property
-//Method
-
+}
